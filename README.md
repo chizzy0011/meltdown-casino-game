@@ -12,8 +12,9 @@
 
 ## 🎮 Playable Demo & Submission Links
 
-- **Live Web App:** Hosted on Vercel
-- **Chain Jam Entry:** [jam.chain.wtf](https://jam.chain.wtf/)
+- **Live Web App:** [https://chizzy0011.github.io/meltdown-casino-game/](https://chizzy0011.github.io/meltdown-casino-game/)
+- **GitHub Repository:** [https://github.com/chizzy0011/meltdown-casino-game](https://github.com/chizzy0011/meltdown-casino-game)
+- **Chain Jam Entry Hub:** [jam.chain.wtf](https://jam.chain.wtf/)
 - **SDK Documentation:** [sdk.chain.wtf/casino](https://sdk.chain.wtf/casino)
 
 ---
