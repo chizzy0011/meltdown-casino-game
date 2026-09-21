@@ -1,0 +1,21 @@
+{
+  "manifestVersion": "1.0.0",
+  "id": "meltdown",
+  "name": "Meltdown: Overclock Protocol",
+  "version": "1.0.0",
+  "description": "High-tension quantum hardware push-your-luck wagering game. Overclock an unstable rig up to 250x or eject before core meltdown.",
+  "author": "Chain Jam Vol. 1",
+  "category": "arcade",
+  "tags": ["arcade", "push-your-luck", "cyberpunk", "hardware", "provably-fair"],
+  "rtp": 96.0,
+  "volatility": "high",
+  "engine": "custom",
+  "minWager": "0.1",
+  "maxWager": "100.0",
+  "aspectRatio": "16:9",
+  "viewport": {
+    "width": 960,
+    "height": 640,
+    "resizable": true
+  }
+}
