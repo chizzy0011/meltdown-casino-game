@@ -1,0 +1,19 @@
+{
+  "name": "meltdown-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3200",
+    "test:rtp": "node test/rtp.mjs",
+    "build": "vite build",
+    "preview": "vite preview --port 3200",
+    "check-types": "tsc --noEmit --allowJs --checkJs false"
+  },
+  "dependencies": {
+    "@chain/casino-sdk": "file:../..",
+    "viem": "^2.52.2"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0"
+  }
+}

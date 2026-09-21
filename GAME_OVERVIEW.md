@@ -1,73 +1,107 @@
 # Meltdown: Overclock Protocol ⚡ — Game Overview & Documentation
 
-> **Chain Jam Vol. 1 Official Entry**  
-> *A Provably Fair Hardware Push-Your-Luck Wagering Game*
+> **Chain Jam Vol. 1 Official Entry**
+> *A Provably Fair Hardware Push-Your-Luck Wagering Game on the Chain Casino SDK*
 
 ---
 
 ## 🎯 1. The Goal & Aim
 
-### What is the Goal of Meltdown?
-The goal of **Meltdown** is to pioneer a fresh, high-tension **push-your-luck wagering mechanic** designed specifically for the **Chain Jam Vol. 1**.
+**Meltdown** is an original push-your-luck wagering game. The player commands an unstable quantum
+mining processor and *overclocks* it one tier at a time — from **2.0 GHz (IDLE)** up to
+**36.0 GHz (OVERCLOCK GOD, 250x)**. Every push raises both the payout multiplier and the risk of a
+catastrophic core meltdown. Bank the pot at any time, or arm a one-shot Cryo-Coolant safeguard.
 
-Rather than relying on passive reel spins or classic table games, **Meltdown** puts the player in command of an unstable quantum mining processor where every decision to push the clock speed higher increases both the payout multiplier and the acoustic/thermal danger of a catastrophic hardware blowout.
-
-### Alignment with Jam Judging Criteria:
-1. **🆕 Novelty:** Replaces generic crash curves and classic dice with a discrete, hardware-overclocking risk ladder and Cryo-safeguard tactical mechanics.
-2. **😃 Fun & Replayability:** Extreme tension loop — turbine fans accelerate, coil whine escalates in frequency, and CRT heat bloom intensifies with every single gigahertz.
-3. **🌀 Simplicity:** Push Clock ➔ Watch telemetry ➔ Harvest or Push again.
-4. **🔊 Visual & Sound Polish:** 60 FPS HTML5 Canvas with real-time heat dispersion, circuit nodal pulses, frost vapor, and a 100% native Web Audio synthesizer with zero external audio assets.
-5. **⚖️ Exact 96.0% RTP Math:** Continuous 96.0% Return to Player mathematically guaranteed across all step targets.
-
----
-
-## 🕹️ 2. What This Game Is All About
-
-### The Core Loop
-1. **Set Base Wager:** Enter your wager (e.g. 1.00 USDC) and press **⚡ OVERCLOCK (START)**.
-2. **Step Overclocking:** Each click on **PUSH CLOCK** pushes the processor to the next frequency tier:
-   - **Step 1 (3.2 GHz):** `1.30x` (73.85% Survival | 52°C)
-   - **Step 2 (4.8 GHz):** `1.95x` (49.23% Survival | 68°C)
-   - **Step 3 (6.4 GHz):** `3.20x` (30.00% Survival | 84°C)
-   - **Step 4 (8.2 GHz):** `5.60x` (17.14% Survival | 98°C)
-   - **Step 5 (10.5 GHz):** `10.50x` (9.14% Survival | 112°C)
-   - **Step 6 (14.0 GHz):** `22.00x` (4.36% Survival | 128°C)
-   - **Step 7 (20.0 GHz):** `55.00x` (1.75% Survival | 145°C)
-   - **Step 8 (32.0 GHz):** `250.00x` (0.384% Survival | 168°C — **OVERCLOCK GOD**)
-3. **Emergency Cryo-Coolant (❄️):**
-   - Once per round, the player can click **INJECT CRYO (-15%)**.
-   - Liquid nitrogen floods the socket die, creating frost vapor and guaranteeing **100% survival on the next push** in exchange for a 15% reduction to the current pot.
-4. **Harvest or Meltdown:**
-   - Click **💰 HARVEST POT** at any point to bank your winnings safely.
-   - If the core exceeds its VRF-seeded thermal threshold on an unprotected push, it explodes in a **Catastrophic Blowout** and resets the round.
+### Alignment with the judging criteria
+1. **🆕 Novelty:** Not a crash/dice/plinko clone — a discrete hardware-overclock risk ladder with a
+   tactical Cryo safeguard (sacrifice 15% of the pot to guarantee the next push).
+2. **😃 Fun & Replayability:** Escalating tension — turbine fans spin up, coil whine climbs, heat
+   bloom intensifies, and the odds tighten with every gigahertz. Auto-target presets + rank/XP.
+3. **🌀 Simplicity:** Set wager → **PUSH CLOCK** → **HARVEST** or push again.
+4. **🔊 Visual & Sound:** 60 FPS HTML5 Canvas processor die + a 100% native Web Audio synth, zero
+   external assets (instant load).
+5. **⚖️ Exact 96.0% RTP:** Mathematically guaranteed across every target tier (see §3).
 
 ---
 
-## ⚖️ 3. Mathematical Model & RTP (Exact 96.0%)
+## 🕹️ 2. Core Loop & Paytable
 
-Every step's payout multiplier is mathematically derived from the exact survival cumulative probability $C_k$:
+Each **PUSH** attempts the next tier. Surviving advances you; failing is a meltdown (pot lost).
+**HARVEST** banks the current multiplier at any time.
 
-$$M_k = \frac{0.9600}{C_k}$$
+| Tier | Clock | Label | Cumulative survival `C` | Multiplier | Core Temp |
+| :--: | :---: | :--- | :--: | :--: | :--: |
+| 1 | 3.2 GHz | STABLE | 92.000% | **1.05x** | 45°C |
+| 2 | 4.8 GHz | TURBO | 80.000% | **1.20x** | 58°C |
+| 3 | 6.4 GHz | HIGH LOAD | 64.000% | **1.50x** | 72°C |
+| 4 | 8.2 GHz | VOLATILE | 48.000% | **2.00x** | 86°C |
+| 5 | 10.5 GHz | CRITICAL | 32.000% | **3.00x** | 102°C |
+| 6 | 14.0 GHz | PLASMA SURGE | 16.000% | **6.00x** | 120°C |
+| 7 | 20.0 GHz | SUPERCRITICAL | 6.000% | **16.00x** | 138°C |
+| 8 | 28.0 GHz | QUANTUM SINGULARITY | 1.200% | **80.00x** | 155°C |
+| 9 | 36.0 GHz | OVERCLOCK GOD | 0.384% | **250.00x** | 175°C |
 
-- $\mathbb{E}[\text{Payout}] = C_k \times M_k = 0.9600 \times \text{Wager}$ across every possible target step.
+**❄️ Cryo-Coolant:** Once per round, arm cryo to make the **next** push a guaranteed survival, in
+exchange for a permanent **15%** reduction of the final pot.
 
 ---
 
-## 🏗️ 4. Technical Architecture
+## ⚖️ 3. Mathematical Model — Exact 96.0% RTP
 
-- **`contracts/Meltdown.sol`:** Smart contract implementing the official Chain `ICasinoGameV2` specification.
-- **`src/engine/meltdown_math.js`:** Discrete probability survival model and step state machine.
-- **`src/render/core_renderer.js`:** 60 FPS HTML5 Canvas processor die renderer with dynamic heat coloring and particle explosions.
-- **`src/audio/overclock_audio.js`:** Web Audio synthesizer simulating turbine fan pitch sweeps, liquid nitrogen venting, and blowout sub-bass blasts.
-- **`src/sdk/bridge.js`:** Penpal bridge adapter for `chain.wtf` iframe embedding and standalone simulator.
-- **`game.manifest.json`:** Verified Chain Jam manifest.
+Survival is modelled as a **telescoping cumulative** curve. On a push to tier *k*, the contract
+draws a uniform roll in `[0, C[k-1])` and survives iff `roll < C[k]`. Because the per-push
+probabilities telescope, `P(reach tier k) = C[k] / C[0] = C[k]`. The multiplier is
+`M[k] = round(0.96 / C[k])`, so:
+
+$$\mathbb{E}[\text{payout} \mid \text{target } k] = C_k \cdot M_k = 0.96 \times \text{wager}$$
+
+for **every** target tier (tier 1 is 0.966 from the deliberate 1.05x rounding). The paytable in §2
+is the exact math the contract enforces — verify it with:
+
+```sh
+cd sdk/casino-sdk/examples/meltdown-public
+node test/rtp.mjs
+```
+
+which proves the identity `C[k] · M[k] == 0.96` for every tier and Monte-Carlo-confirms the
+hit-rates.
+
+---
+
+## 🏗️ 4. Technical Architecture (Chain Casino SDK)
+
+Meltdown is built on the official **`@chain/casino-sdk`** as a **multi-action** game (the mines
+shape): the session stays open across pushes, each optionally requesting on-chain VRF.
+
+- **`sdk/casino-sdk/simulator/contracts/MeltdownGame.sol`** — implements `ICasinoGameV2`
+  (`quoteCaps`, `quoteRiskParams`, `onSessionStart`, `onPlayerAction`, `onRandomness`,
+  `quoteForfeitPayout`). Stateless `SessionContext → StepResult` state machine; unbiased randomness
+  via rejection sampling.
+- **`examples/meltdown-public/src/host.js`** — connects to the host via `connectGameToHost`; a
+  faithful in-browser demo host mirrors the contract so the game is playable standalone (`?demo=1`).
+- **`examples/meltdown-public/src/main.js`** — snapshot-driven controller: calls
+  `openSession` / `submitAction` / `revealOutcome`, renders from the host snapshot.
+- **`examples/meltdown-public/src/render/`, `src/audio/`** — 60 FPS Canvas renderer + Web Audio synth.
+- **`examples/meltdown-public/public/game.manifest.json`** — v1 manifest (multi-action capabilities).
+
+The frontend contains **no wallet code**; the host signs every transaction and streams state.
 
 ---
 
 ## 🚀 5. How to Run
 
-```powershell
-cd C:\Users\lenovo\Documents\Meltdown
-node server.js
+**Full local stack (chain + VRF + host simulator + game):**
+```sh
+cd sdk/casino-sdk
+npm install
+npm start          # simulator :3300, Meltdown guest :3200
 ```
-Open **`http://localhost:8081/`** in your browser.
+Open **http://localhost:3300**. The local node auto-compiles and deploys `MeltdownGame.sol`; the
+simulator mounts the Meltdown iframe.
+
+**Standalone playable demo (no chain):**
+```sh
+cd sdk/casino-sdk/examples/meltdown-public
+npm install
+npm run dev        # open http://localhost:3200  (plays against the demo host)
+```
