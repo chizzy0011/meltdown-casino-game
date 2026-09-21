@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "gameId": "MeltdownGame",
+  "apiVersion": 1,
+  "defaultLocale": "en",
+  "locales": {
+    "en": {
+      "name": "Meltdown: Overclock Protocol",
+      "description": "Overclock an unstable quantum processor tier by tier up to 250x. Push your luck, arm emergency cryo-coolant, and harvest the pot before a catastrophic core meltdown."
+    }
+  },
+  "presentation": {
+    "mode": "full-iframe",
+    "hostPanels": {
+      "openSession": false,
+      "history": false,
+      "status": false
+    }
+  },
+  "capabilities": {
+    "openSession": true,
+    "submitAction": true,
+    "forfeitExpiredSession": true,
+    "cancelStuckRandomness": true,
+    "resize": true
+  }
+}
