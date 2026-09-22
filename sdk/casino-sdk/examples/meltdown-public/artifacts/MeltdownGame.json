@@ -1,0 +1,473 @@
+{
+  "contractName": "MeltdownGame",
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.37+commit.f401782d.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    }
+  },
+  "abi": [
+    {
+      "inputs": [],
+      "name": "MeltdownGame__CryoUnavailable",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "MeltdownGame__InvalidAction",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "MeltdownGame__NothingToHarvest",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "MeltdownGame__RoundOver",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "sessionId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "player",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "wagerBase",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "escrowedStake",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "reservedProfit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint32",
+              "name": "step",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "gameData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "gameState",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SessionContext",
+          "name": "ctx",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes",
+          "name": "actionData",
+          "type": "bytes"
+        }
+      ],
+      "name": "onPlayerAction",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "newGameState",
+              "type": "bytes"
+            },
+            {
+              "internalType": "int256",
+              "name": "escrowDelta",
+              "type": "int256"
+            },
+            {
+              "internalType": "int256",
+              "name": "reservedProfitDelta",
+              "type": "int256"
+            },
+            {
+              "internalType": "enum SessionPhase",
+              "name": "nextPhase",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bool",
+              "name": "requestRandomnessNow",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "payout",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct StepResult",
+          "name": "r",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "sessionId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "player",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "wagerBase",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "escrowedStake",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "reservedProfit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint32",
+              "name": "step",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "gameData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "gameState",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SessionContext",
+          "name": "ctx",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "randomness",
+          "type": "bytes32"
+        }
+      ],
+      "name": "onRandomness",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "newGameState",
+              "type": "bytes"
+            },
+            {
+              "internalType": "int256",
+              "name": "escrowDelta",
+              "type": "int256"
+            },
+            {
+              "internalType": "int256",
+              "name": "reservedProfitDelta",
+              "type": "int256"
+            },
+            {
+              "internalType": "enum SessionPhase",
+              "name": "nextPhase",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bool",
+              "name": "requestRandomnessNow",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "payout",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct StepResult",
+          "name": "r",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "sessionId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "player",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "wagerBase",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "escrowedStake",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "reservedProfit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint32",
+              "name": "step",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "gameData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "gameState",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SessionContext",
+          "name": "ctx",
+          "type": "tuple"
+        }
+      ],
+      "name": "onSessionStart",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "newGameState",
+              "type": "bytes"
+            },
+            {
+              "internalType": "int256",
+              "name": "escrowDelta",
+              "type": "int256"
+            },
+            {
+              "internalType": "int256",
+              "name": "reservedProfitDelta",
+              "type": "int256"
+            },
+            {
+              "internalType": "enum SessionPhase",
+              "name": "nextPhase",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bool",
+              "name": "requestRandomnessNow",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "payout",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct StepResult",
+          "name": "r",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wager",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "quoteCaps",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "maxEscrowStake",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxReservedProfit",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "sessionId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "player",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "vault",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "wagerBase",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "escrowedStake",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "reservedProfit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint32",
+              "name": "step",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "gameData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "gameState",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SessionContext",
+          "name": "ctx",
+          "type": "tuple"
+        }
+      ],
+      "name": "quoteForfeitPayout",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "cashoutValue",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wager",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "quoteRiskParams",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "maxPayout",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "probabilityWad",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expectedPayout",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "bodyVarianceScaled",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600e575f5ffd5b50610dca8061001c5f395ff3fe608060405234801561000f575f5ffd5b5060043610610060575f3560e01c806332824764146100645780633ae9cd1e14610091578063610a9d69146100c45780636949b4a8146100e4578063bb81aed8146100f7578063f75eb8ce14610118575b5f5ffd5b6100776100723660046109f1565b61012b565b604080519283526020830191909152015b60405180910390f35b6100a461009f3660046109f1565b610173565b604080519485526020850193909352918301526060820152608001610088565b6100d76100d2366004610a50565b6101ed565b6040516100889190610ab6565b6100d76100f2366004610b34565b6102af565b61010a610105366004610a50565b61040b565b604051908152602001610088565b6100d7610126366004610b76565b61043f565b825f8061271061013b6009610647565b6101459088610bda565b61014f9190610c05565b905085811161015e575f610168565b6101688682610c18565b915050935093915050565b5f5f5f5f6127106101846009610647565b61018e9089610bda565b6101989190610c05565b9350620186a06101a86009610707565b6101ba90670de0b6b3a7640000610bda565b6101c49190610c05565b92506127106101d588612580610bda565b6101df9190610c05565b91505f905093509350935093565b6101f5610969565b5f6127106102036009610647565b610211906060860135610bda565b61021b9190610c05565b90505f8360600135821161022f575f61023d565b61023d606085013583610c18565b604080516080810182525f8082526020808301829052828401829052606083019190915291519293509161027391839101610c2b565b60408051601f198184030181529181529085525f602086018190529085019290925250600260608401526080830181905260a083015250919050565b6102b7610969565b5f6102c6610100850185610c5f565b8101906102d39190610cc6565b90508060600151806102ec57508051600960ff90911610155b1561030a5760405163078ded6b60e01b815260040160405180910390fd5b80515f90610319906001610d4f565b90505f610328835f0151610707565b90505f61033483610707565b90505f610343878935856107c7565b9050818110156103b35760ff841680865260081901610372576103668886610897565b95505050505050610405565b846040516020016103839190610c2b565b60408051601f19818403018152919052865250506002606085015250505f6080830181905260a083015250610405565b600160608601526040516103cb908690602001610c2b565b60408051601f198184030181529181529087525f60208801819052908701819052600360608801526080870181905260a087015250505050505b92915050565b5f8061041b610100840184610c5f565b8101906104289190610cc6565b90506104388360600135826108f8565b9392505050565b610447610969565b5f610456610100860186610c5f565b8101906104639190610cc6565b90508060600151156104885760405163078ded6b60e01b815260040160405180910390fd5b5f61049584860186610d68565b905060011960ff8216016104da57815160ff165f036104c757604051632f11275b60e01b815260040160405180910390fd5b6104d18683610897565b92505050610438565b5f1960ff82160161056f57815160ff1615806104f7575081602001515b80610503575081604001515b1561052157604051633277f68760e01b815260040160405180910390fd5b60016020808401829052604080850192909252905161054291849101610c2b565b60408051601f1981840301815291905283525050600260608201525f6080820181905260a0820152610438565b60ff811661062e578151600960ff9091161061059e5760405163078ded6b60e01b815260040160405180910390fd5b8160400151156105f0575f6040830152815160019083906105c0908390610d4f565b60ff9081169091528351166008190190506105df576104d18683610897565b816040516020016105429190610c2b565b816040516020016106019190610c2b565b60408051601f198184030181529190528352505060016060820181905260808201525f60a0820152610438565b604051632e870c4360e01b815260040160405180910390fd5b5f8160ff165f0361065b5750612710919050565b8160ff1660010361066f5750612904919050565b8160ff166002036106835750612ee0919050565b8160ff166003036106975750613a98919050565b8160ff166004036106ab5750614e20919050565b8160ff166005036106bf5750617530919050565b8160ff166006036106d3575061ea60919050565b8160ff166007036106e8575062027100919050565b8160ff166008036106fd5750620c3500919050565b50622625a0919050565b5f8160ff165f0361071c5750620186a0919050565b8160ff16600103610731575062016760919050565b8160ff16600203610746575062013880919050565b8160ff1660030361075a575061fa00919050565b8160ff1660040361076e575061bb80919050565b8160ff166005036107825750617d00919050565b8160ff166006036107965750613e80919050565b8160ff166007036107aa5750611770919050565b8160ff166008036107be57506104b0919050565b50610180919050565b5f5f82116108015760405162461bcd60e51b815260206004820152600360248201526206e3d360ec1b604482015260640160405180910390fd5b5f61080d835f19610d81565b610818905f19610c18565b90505f8585604051602001610837929190918252602082015260400190565b60408051601f1981840301815291905280516020909101209050805b828110610882575060408051602080820193909352815180820384018152908201909152805191012080610853565b61088c8582610d81565b979650505050505050565b61089f610969565b816040516020016108b09190610c2b565b60408051808303601f190181529181529082525f6020830181905290820152600360608201819052505f60808201526108ed6060840135836108f8565b60a082015292915050565b80515f9060ff16158061090c575081606001515b1561091857505f610405565b5f612710610928845f0151610647565b6109329086610bda565b61093c9190610c05565b90508260200151156104385761271061095761213483610bda565b6109619190610c05565b949350505050565b6040518060c00160405280606081526020015f81526020015f81526020015f600581111561099957610999610a82565b81525f6020820181905260409091015290565b5f5f83601f8401126109bc575f5ffd5b50813567ffffffffffffffff8111156109d3575f5ffd5b6020830191508360208285010111156109ea575f5ffd5b9250929050565b5f5f5f60408486031215610a03575f5ffd5b83359250602084013567ffffffffffffffff811115610a20575f5ffd5b610a2c868287016109ac565b9497909650939450505050565b5f6101208284031215610a4a575f5ffd5b50919050565b5f60208284031215610a60575f5ffd5b813567ffffffffffffffff811115610a76575f5ffd5b61096184828501610a39565b634e487b7160e01b5f52602160045260245ffd5b60068110610ab257634e487b7160e01b5f52602160045260245ffd5b9052565b602081525f825160c0602084015280518060e0850152806020830161010086015e5f6101008286010152602085015160408501526040850151606085015260608501519150610b086080850183610a96565b6080850151151560a0858101919091529094015160c08401525050601f909101601f1916016101000190565b5f5f60408385031215610b45575f5ffd5b823567ffffffffffffffff811115610b5b575f5ffd5b610b6785828601610a39565b95602094909401359450505050565b5f5f5f60408486031215610b88575f5ffd5b833567ffffffffffffffff811115610b9e575f5ffd5b610baa86828701610a39565b935050602084013567ffffffffffffffff811115610a20575f5ffd5b634e487b7160e01b5f52601160045260245ffd5b808202811582820484141761040557610405610bc6565b634e487b7160e01b5f52601260045260245ffd5b5f82610c1357610c13610bf1565b500490565b8181038181111561040557610405610bc6565b815160ff16815260208083015115159082015260408083015115159082015260609182015115159181019190915260800190565b5f5f8335601e19843603018112610c74575f5ffd5b83018035915067ffffffffffffffff821115610c8e575f5ffd5b6020019150368190038213156109ea575f5ffd5b803560ff81168114610cb2575f5ffd5b919050565b80358015158114610cb2575f5ffd5b5f6080828403128015610cd7575f5ffd5b506040516080810167ffffffffffffffff81118282101715610d0757634e487b7160e01b5f52604160045260245ffd5b604052610d1383610ca2565b8152610d2160208401610cb7565b6020820152610d3260408401610cb7565b6040820152610d4360608401610cb7565b60608201529392505050565b60ff818116838216019081111561040557610405610bc6565b5f60208284031215610d78575f5ffd5b61043882610ca2565b5f82610d8f57610d8f610bf1565b50069056fea26469706673582212200d5badc1cf2d1d2e05788e69173b6b769e5371518b839b75fe3531d2b30b094164736f6c63430008250033",
+  "note": "Constructor takes no arguments. Deploy, then hand the address to the Chain.wtf team for whitelisting."
+}

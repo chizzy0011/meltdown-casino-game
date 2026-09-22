@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "vite --port 3200",
     "test:rtp": "node test/rtp.mjs",
+    "compile:contract": "node deploy/compile.mjs",
+    "deploy:contract": "node deploy/deploy.mjs",
     "build": "vite build",
     "preview": "vite preview --port 3200",
     "check-types": "tsc --noEmit --allowJs --checkJs false"
