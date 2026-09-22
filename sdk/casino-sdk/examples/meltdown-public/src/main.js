@@ -7,6 +7,7 @@
  * settles. Identical code path embedded and standalone.
  */
 
+import './styles.css';
 import { STEPS, MINER_RANKS } from './engine/meltdown_math.js';
 import { CoreRenderer } from './render/core_renderer.js';
 import { overclockAudio } from './audio/overclock_audio.js';
