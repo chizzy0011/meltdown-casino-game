@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="./assets/logo.svg" alt="Meltdown: Overclock Protocol" width="620">
+</p>
+
+<p align="center"><b>▶ Live demo: <a href="https://meltdown-overclock.vercel.app">meltdown-overclock.vercel.app</a></b></p>
+
 # Meltdown: Overclock Protocol ⚡
 
 [![Chain Jam Vol. 1](https://img.shields.io/badge/Chain%20Jam-Vol.%201%20Entry-ffaa00?style=for-the-badge)](https://jam.chain.wtf)

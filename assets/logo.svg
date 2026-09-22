@@ -1,0 +1,63 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Meltdown: Overclock Protocol">
+  <defs>
+    <radialGradient id="lCoreHeat" cx="50%" cy="46%" r="62%">
+      <stop offset="0%" stop-color="#eafcff"/>
+      <stop offset="26%" stop-color="#00f0ff"/>
+      <stop offset="58%" stop-color="#ffaa00"/>
+      <stop offset="82%" stop-color="#ff1133"/>
+      <stop offset="100%" stop-color="#d000ff"/>
+    </radialGradient>
+    <linearGradient id="lDieEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="50%" stop-color="#ffaa00"/>
+      <stop offset="100%" stop-color="#d000ff"/>
+    </linearGradient>
+    <linearGradient id="wordHeat" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="55%" stop-color="#ffaa00"/>
+      <stop offset="100%" stop-color="#ff1133"/>
+    </linearGradient>
+    <filter id="lGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" rx="28" fill="#05070d"/>
+
+  <!-- icon mark -->
+  <g transform="translate(40,44) scale(0.53)">
+    <g fill="#182740">
+      <rect x="176" y="96" width="18" height="34" rx="4"/><rect x="212" y="96" width="18" height="34" rx="4"/>
+      <rect x="248" y="96" width="18" height="34" rx="4"/><rect x="284" y="96" width="18" height="34" rx="4"/>
+      <rect x="320" y="96" width="18" height="34" rx="4"/>
+      <rect x="176" y="382" width="18" height="34" rx="4"/><rect x="212" y="382" width="18" height="34" rx="4"/>
+      <rect x="248" y="382" width="18" height="34" rx="4"/><rect x="284" y="382" width="18" height="34" rx="4"/>
+      <rect x="320" y="382" width="18" height="34" rx="4"/>
+      <rect x="96" y="176" width="34" height="18" rx="4"/><rect x="96" y="212" width="34" height="18" rx="4"/>
+      <rect x="96" y="248" width="34" height="18" rx="4"/><rect x="96" y="284" width="34" height="18" rx="4"/>
+      <rect x="96" y="320" width="34" height="18" rx="4"/>
+      <rect x="382" y="176" width="34" height="18" rx="4"/><rect x="382" y="212" width="34" height="18" rx="4"/>
+      <rect x="382" y="248" width="34" height="18" rx="4"/><rect x="382" y="284" width="34" height="18" rx="4"/>
+      <rect x="382" y="320" width="34" height="18" rx="4"/>
+    </g>
+    <rect x="132" y="132" width="248" height="248" rx="40" fill="#070c16" stroke="url(#lDieEdge)" stroke-width="6"/>
+    <circle cx="256" cy="248" r="92" fill="url(#lCoreHeat)" filter="url(#lGlow)" opacity="0.96"/>
+    <path d="M280 168 L206 262 H250 L232 344 L312 236 H264 Z"
+          fill="#ffffff" stroke="#04060c" stroke-width="6" stroke-linejoin="round" filter="url(#lGlow)"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="330" y="192" font-family="'JetBrains Mono','Courier New',monospace" font-weight="800"
+        font-size="104" letter-spacing="2" fill="url(#wordHeat)">MELTDOWN</text>
+  <text x="334" y="246" font-family="'JetBrains Mono','Courier New',monospace" font-weight="700"
+        font-size="34" letter-spacing="14" fill="#7f8ca3">OVERCLOCK PROTOCOL</text>
+
+  <!-- rtp chip -->
+  <g transform="translate(334,276)">
+    <rect x="0" y="0" width="196" height="40" rx="20" fill="none" stroke="#1c3350" stroke-width="2"/>
+    <circle cx="24" cy="20" r="6" fill="#00ff66"/>
+    <text x="42" y="27" font-family="'JetBrains Mono',monospace" font-weight="700" font-size="20"
+          letter-spacing="2" fill="#9fb0c7">96% RTP · 250x</text>
+  </g>
+</svg>
