@@ -42,7 +42,12 @@ npm run test:rtp
 > probe. If it reports "Hardhat node did not become ready", just run `npm start` again (warm cache),
 > or ensure nothing else already holds port `8545`/`3300` (e.g. another SDK stack).
 
+## Live demo
+**https://meltdown-overclock.vercel.app** — standalone (play-money demo host), jam widget live,
+`game.manifest.json` served same-origin with open CORS.
+
 ## Deliverables to the Chain team
-1. Audited `MeltdownGame` contract deployed on the target chain (address TBD).
-2. Static build of `examples/meltdown-public` at a stable HTTPS URL with `game.manifest.json`
-   same-origin, jam widget live.
+1. Audited `MeltdownGame` contract — source at `simulator/contracts/MeltdownGame.sol`; deploy-ready
+   artifact + one-command deploy at `deploy/` (address on the target chain assigned at integration).
+2. Static build hosted at **https://meltdown-overclock.vercel.app** (`game.manifest.json` same-origin,
+   jam widget live).
