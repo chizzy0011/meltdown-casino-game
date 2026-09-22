@@ -4,7 +4,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3200",
+    "test": "node test/behavior.mjs && node test/rtp.mjs",
     "test:rtp": "node test/rtp.mjs",
+    "test:behavior": "node test/behavior.mjs",
     "compile:contract": "node deploy/compile.mjs",
     "deploy:contract": "node deploy/deploy.mjs",
     "build": "vite build",
