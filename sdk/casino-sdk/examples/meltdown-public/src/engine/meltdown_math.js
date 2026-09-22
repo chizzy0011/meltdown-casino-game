@@ -41,9 +41,12 @@ export const MINER_RANKS = [
   { xp: 600, title: 'QUANTUM DEITY',    badge: '👑' }
 ];
 
-/** Cash-out value at a tier for a given wager (base units), applying the cryo penalty. */
-export function cashout(wagerBaseUnits, step, cryoUsed) {
-  if (step <= 0) return 0n;
+/**
+ * Cash-out value for a given wager (base units). Mirrors MeltdownGame.sol `_cashout`
+ * exactly: a blown core or the idle tier pays nothing; the cryo penalty applies otherwise.
+ */
+export function cashout(wagerBaseUnits, step, cryoUsed, blown = false) {
+  if (blown || step <= 0) return 0n;
   let payout = (wagerBaseUnits * BigInt(MULT_BPS[step])) / 10000n;
   if (cryoUsed) payout = (payout * BigInt(CRYO_KEEP_BPS)) / 10000n;
   return payout;

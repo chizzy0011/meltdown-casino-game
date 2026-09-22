@@ -52,12 +52,15 @@ function encodeState(s) {
   }]);
 }
 
-const HANDSHAKE_TIMEOUT_MS = 3500;
-
 /**
  * Connect to a host. Resolves `{ mode, hostApi }` and pushes snapshots to
- * `onSnapshot`. Falls back to the demo host when not embedded, when `?demo=1`,
- * or when the real handshake does not resolve in time.
+ * `onSnapshot`.
+ *
+ * - Standalone (not in an iframe) or `?demo=1` -> the local demo host.
+ * - Embedded in a casino host (the simulator or chain.wtf) -> ALWAYS the real
+ *   `connectGameToHost` bridge, and we wait for the handshake however long it
+ *   takes. We never silently fall back to the demo host when embedded: doing so
+ *   would bypass on-chain settlement and run the play-money mirror instead.
  */
 export function createHost(onSnapshot) {
   const params = new URLSearchParams(location.search);
@@ -73,13 +76,7 @@ export function createHost(onSnapshot) {
     async setState(snapshot) { onSnapshot(snapshot); },
   });
 
-  const real = connection.promise.then(hostApi => ({ mode: 'real', hostApi }));
-  const timeout = new Promise(resolve =>
-    setTimeout(() => resolve({ mode: 'demo', hostApi: createDemoHost(onSnapshot) }), HANDSHAKE_TIMEOUT_MS),
-  );
-  return Promise.race([real, timeout]).catch(() => ({
-    mode: 'demo', hostApi: createDemoHost(onSnapshot),
-  }));
+  return connection.promise.then(hostApi => ({ mode: 'real', hostApi }));
 }
 
 // ---------------------------------------------------------------------------
@@ -153,7 +150,7 @@ function createDemoHost(onSnapshot) {
   }
 
   function settle(sess) {
-    sess.payout = cashout(sess.wager, sess.mstate.step, sess.mstate.cryoUsed);
+    sess.payout = cashout(sess.wager, sess.mstate.step, sess.mstate.cryoUsed, sess.mstate.blown);
     sess.phase = 3; // SETTLED
     sess.isSettled = true;
     state.balance += sess.payout;

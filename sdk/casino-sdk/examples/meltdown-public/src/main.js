@@ -51,16 +51,21 @@ class MeltdownApp {
 
   async connect() {
     this.hostApi = null;
-    const conn = await createHost((snap) => this.onSnapshot(snap));
+    let conn;
+    try {
+      conn = await createHost((snap) => this.onSnapshot(snap));
+    } catch {
+      // Embedded but the host handshake never resolved (e.g. opened in an iframe
+      // that isn't a casino host). Leave the "connecting" overlay up, like coinflip.
+      $('connectSub').textContent = 'Waiting for a casino host… (open inside chain.wtf or the simulator)';
+      return;
+    }
     this.mode = conn.mode;
     this.hostApi = conn.hostApi;
-    const sub = $('connectSub');
     if (this.mode === 'demo') {
-      sub.textContent = 'Running in standalone demo mode (play-money).';
-      $('connectOverlay').classList.add('hidden');
-    } else {
-      $('connectOverlay').classList.add('hidden');
+      $('connectSub').textContent = 'Running in standalone demo mode (play-money).';
     }
+    $('connectOverlay').classList.add('hidden');
   }
 
   // ---- rendering from snapshot -------------------------------------------
